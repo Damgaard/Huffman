@@ -112,21 +112,21 @@ def test__chars_to_bits_always_in_bytes():
     assert _chars_to_bits(string, prefixes) == '01000000'
 
 
-def test_freq():
+def test_get_freq():
     assert _get_freq("") == {}
     assert _get_freq("a") == {"a": 1}
     assert _get_freq("abba") == {"a": 0.5, "b": 0.5}
     assert _get_freq("aab") == {"a": 2 / 3.0, "b": 1 / 3.0}
 
 
-def test_prefix_helper():
+def test_make_prefix():
     smallest = Node(1, 'a', None, None)
     sec_smallest = Node(2, 'b', None, None)
     tree = Node(3, None, smallest, sec_smallest)
     assert _make_prefix(tree) == {'a': '0', 'b': '1'}
 
 
-def test_prefix_helper_inner_node():
+def test_make_prefix_inner_node():
     smallest = Node(1, 'a', None, None)
     sec_smallest = Node(2, 'b', None, None)
     third_smallest = Node(4, 'c', None, None)
