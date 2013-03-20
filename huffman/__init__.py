@@ -81,6 +81,8 @@ def _bits_to_chars(tree, bitstring):
 def _chars_to_bits(string, prefixes):
     """Takes a string and returns a huffman encoded bitstring."""
     bitstring = "".join(prefixes[ch] for ch in string)
+    # Length of the resulting bitstring must be a multiple of 8 as this is the
+    # size of a byte.
     if len(bitstring) % 8:
         bitstring += (8 - len(bitstring) % 8) * LEFT_BIT
     return bitstring
