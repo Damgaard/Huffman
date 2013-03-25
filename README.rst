@@ -25,7 +25,9 @@ stored in a ``NamedTuple`` data structure.
 to encode the string, alternatively if the ``tree`` argument is given, this
 tree will be used. This gives the option of using a single tree to encode
 multiple file with the same encoding, even if it isn't optimal for all files.
-The tree used is returned from this function.
+The tree used is returned from this function. The big downside is that files
+cannot be decoded without the huffman tree. Remember to store the tree
+somewhere if you want to decode the file later.
 
 ``decode`` takes a file and a tree and decodes the huffman encoded file using
 the tree. The decoded content is returned.
