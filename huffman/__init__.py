@@ -17,6 +17,8 @@ from bitstring import BitArray, BitStream, ReadError
 from heapq import heapify, heappop, heappush
 
 
+__version__ = '0.2'
+
 Node = namedtuple('Node', 'weight char left right')
 LEFT_BIT = '0'
 RIGHT_BIT = '1'
